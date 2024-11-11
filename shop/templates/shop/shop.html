@@ -1,0 +1,25 @@
+{%extends 'shop/main.html' %}
+{%load static%}
+{%block content%}
+
+<div>
+    <img class="btn custom-shop" src="{%static 'images/logo.png'%}" alt="logo">
+</div>
+
+<div class="row" style="margin-top: 20px;">
+    {%for product in products%}
+    <div class="col-lg-4" style="margin-bottom: 50px;">
+        <img  class="thumbnail" src="{{product.imageURL}}">
+        <div class="box-element product">
+            <h6><strong>{{product.name}}</strong></h6>
+            <hr>
+            <button class="btn btn-outline custom-add-to-cart">Add to Cart</button>
+            <a class="btn custom-view" href="#">View</a>
+            <h4 style="display: inline-block; float: right">Rs.{{product.price}}</h4>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+
+{%endblock content%}
